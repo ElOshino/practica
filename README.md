@@ -1,4 +1,12 @@
-# practica
+# Proyecto de practica 4 'Medico'
+
+
+Aqui se subira el proyecto de practica 4
+*recuerda antes de subir cambios crear una nueva rama y subir a esa*
+
+
+
+
 
 This application was generated using JHipster 6.8.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.8.0](https://www.jhipster.tech/documentation-archive/v6.8.0).
 
