@@ -27,6 +27,60 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
+                    <li>
+                        <a class="dropdown-item" routerLink="doctor" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.doctor">Doctor</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="paciente" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.paciente">Paciente</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="antecedentes-familiares" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.antecedentesFamiliares">Antecedentes Familiares</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="antecedentes-personales" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.antecedentesPersonales">Antecedentes Personales</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="consulta" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.consulta">Consulta</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="medicamentos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.medicamentos">Medicamentos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="examen-fisico" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.examenFisico">Examen Fisico</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="signos-vitales" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.signosVitales">Signos Vitales</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="historia-usuario" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.historiaUsuario">Historia Usuario</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>

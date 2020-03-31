@@ -1,0 +1,36 @@
+{
+    "name": "Doctor",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cedula",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "paciente",
+            "otherEntityRelationshipName": "doctor",
+            "relationshipName": "paciente"
+        }
+    ],
+    "changelogDate": "20200324235400",
+    "entityTableName": "doctor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

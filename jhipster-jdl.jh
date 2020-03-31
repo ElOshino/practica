@@ -1,0 +1,90 @@
+
+entity Doctor {
+	nombre String,
+    telefono String,
+    cedula Integer
+}
+
+entity Paciente {
+	nombre String,
+	telefono String,
+	cedula Integer,
+	direccion String,
+	sexo String,
+	tipoSangre String,
+	fechaNacimiento LocalDate
+}
+
+entity AntecedentesFamiliares {
+	madre String,
+    padre String,
+	abueloPaterno String,
+	abueloMaterno String,
+	abuelaPaterna String,
+	abuelaMaterna String
+}
+
+entity AntecedentesPersonales {
+	cirugias String,
+    traumatismos String,
+	transfusionSanguinea String,
+	alergias String
+}
+
+entity Consulta {
+	sintomas String,
+    signos String,
+    tiempoSintomas String
+}
+
+entity Medicamentos {
+	nombre String,
+    posologia String,
+    tiempoTomando String
+}
+
+entity ExamenFisico {
+	peso Float,
+    talla Float,
+    indiceMasaCorporal Float,
+}
+
+entity SignosVitales {
+	presionArterial Integer,
+    respiracion Integer,
+    pulso Integer,
+    temperatura Float
+}
+
+entity HistoriaUsuario {
+	fecha LocalDate,
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Doctor to Paciente{doctor}
+}
+
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	Paciente{historiaUsuario} to HistoriaUsuario{paciente},
+    HistoriaUsuario{consulta} to Consulta{historiaUsuario},
+    HistoriaUsuario{antecedentesPersonales} to AntecedentesPersonales{historiaUsuario},
+    HistoriaUsuario{antecedentesFamiliares} to AntecedentesFamiliares{historiaUsuario},
+    HistoriaUsuario{medicamento} to Medicamentos{historiaUsuario},
+    HistoriaUsuario{examenFisico} to ExamenFisico{historiaUsuario},
+    ExamenFisico{signosVitales} to SignosVitales{historiaUsuario}
+}
+
+// Set pagination options
+
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

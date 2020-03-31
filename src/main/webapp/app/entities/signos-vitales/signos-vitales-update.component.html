@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-signos-vitales-heading" jhiTranslate="practicaApp.signosVitales.home.createOrEditLabel">Create or edit a Signos Vitales</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.signosVitales.presionArterial" for="field_presionArterial">Presion Arterial</label>
+                    <input type="number" class="form-control" name="presionArterial" id="field_presionArterial"
+                           formControlName="presionArterial"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.signosVitales.respiracion" for="field_respiracion">Respiracion</label>
+                    <input type="number" class="form-control" name="respiracion" id="field_respiracion"
+                           formControlName="respiracion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.signosVitales.pulso" for="field_pulso">Pulso</label>
+                    <input type="number" class="form-control" name="pulso" id="field_pulso"
+                           formControlName="pulso"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.signosVitales.temperatura" for="field_temperatura">Temperatura</label>
+                    <input type="number" class="form-control" name="temperatura" id="field_temperatura"
+                           formControlName="temperatura"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

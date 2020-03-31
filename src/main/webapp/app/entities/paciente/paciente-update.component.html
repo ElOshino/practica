@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-paciente-heading" jhiTranslate="practicaApp.paciente.home.createOrEditLabel">Create or edit a Paciente</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.paciente.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                           formControlName="nombre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.paciente.telefono" for="field_telefono">Telefono</label>
+                    <input type="text" class="form-control" name="telefono" id="field_telefono"
+                           formControlName="telefono"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.paciente.cedula" for="field_cedula">Cedula</label>
+                    <input type="number" class="form-control" name="cedula" id="field_cedula"
+                           formControlName="cedula"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.paciente.direccion" for="field_direccion">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="field_direccion"
+                           formControlName="direccion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.paciente.sexo" for="field_sexo">Sexo</label>
+                    <input type="text" class="form-control" name="sexo" id="field_sexo"
+                           formControlName="sexo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.paciente.tipoSangre" for="field_tipoSangre">Tipo Sangre</label>
+                    <input type="text" class="form-control" name="tipoSangre" id="field_tipoSangre"
+                           formControlName="tipoSangre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.paciente.fechaNacimiento" for="field_fechaNacimiento">Fecha Nacimiento</label>
+                    <div class="input-group">
+                        <input id="field_fechaNacimiento" type="text" class="form-control" name="fechaNacimiento" ngbDatepicker #fechaNacimientoDp="ngbDatepicker" formControlName="fechaNacimiento"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaNacimientoDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.paciente.historiaUsuario" for="field_historiaUsuario">Historia Usuario</label>
+                    <select class="form-control" id="field_historiaUsuario" name="historiaUsuario" formControlName="historiaUsuario">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="historiaUsuarioOption.id === editForm.get('historiaUsuario')!.value?.id ? editForm.get('historiaUsuario')!.value : historiaUsuarioOption" *ngFor="let historiaUsuarioOption of historiausuarios; trackBy: trackById">{{ historiaUsuarioOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.paciente.doctor" for="field_doctor">Doctor</label>
+                    <select class="form-control" id="field_doctor" name="doctor" formControlName="doctor">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="doctorOption.id === editForm.get('doctor')!.value?.id ? editForm.get('doctor')!.value : doctorOption" *ngFor="let doctorOption of doctors; trackBy: trackById">{{ doctorOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

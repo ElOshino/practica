@@ -7,6 +7,15 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
+        "doctor": "Doctor",
+        "paciente": "Paciente",
+        "antecedentesFamiliares": "Antecedentes Familiares",
+        "antecedentesPersonales": "Antecedentes Personales",
+        "consulta": "Consulta",
+        "medicamentos": "Medicamentos",
+        "examenFisico": "Examen Fisico",
+        "signosVitales": "Signos Vitales",
+        "historiaUsuario": "Historia Usuario",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

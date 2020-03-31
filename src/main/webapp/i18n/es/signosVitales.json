@@ -1,0 +1,26 @@
+{
+  "practicaApp": {
+    "signosVitales": {
+      "home": {
+        "title": "Signos Vitales",
+        "createLabel": "Crear nuevo Signos Vitales",
+        "createOrEditLabel": "Crear o editar Signos Vitales",
+        "notFound": "Ningún Signos Vitales encontrado"
+      },
+      "created": "Un nuevo Signos Vitales ha sido creado con el identificador {{ param }}",
+      "updated": "Un Signos Vitales ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Signos Vitales ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Signos Vitales {{ id }}?"
+      },
+      "detail": {
+        "title": "Signos Vitales"
+      },
+      "presionArterial": "Presion Arterial",
+      "respiracion": "Respiracion",
+      "pulso": "Pulso",
+      "temperatura": "Temperatura",
+      "historiaUsuario": "Historia Usuario"
+    }
+  }
+}

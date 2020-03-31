@@ -1,0 +1,28 @@
+{
+  "practicaApp": {
+    "historiaUsuario": {
+      "home": {
+        "title": "Historia Usuarios",
+        "createLabel": "Crear nuevo Historia Usuario",
+        "createOrEditLabel": "Crear o editar Historia Usuario",
+        "notFound": "Ningún Historia Usuarios encontrado"
+      },
+      "created": "Un nuevo Historia Usuario ha sido creado con el identificador {{ param }}",
+      "updated": "Un Historia Usuario ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Historia Usuario ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Historia Usuario {{ id }}?"
+      },
+      "detail": {
+        "title": "Historia Usuario"
+      },
+      "fecha": "Fecha",
+      "consulta": "Consulta",
+      "antecedentesPersonales": "Antecedentes Personales",
+      "antecedentesFamiliares": "Antecedentes Familiares",
+      "medicamento": "Medicamento",
+      "examenFisico": "Examen Fisico",
+      "paciente": "Paciente"
+    }
+  }
+}

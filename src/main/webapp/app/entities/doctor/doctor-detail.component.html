@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doctor">
+            <h2><span jhiTranslate="practicaApp.doctor.detail.title">Doctor</span> {{ doctor.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="practicaApp.doctor.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ doctor.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.doctor.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{ doctor.telefono }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.doctor.cedula">Cedula</span></dt>
+                <dd>
+                    <span>{{ doctor.cedula }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doctor', doctor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+{
+    "name": "Medicamentos",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "posologia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tiempoTomando",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "historiaUsuario",
+            "otherEntityRelationshipName": "medicamento",
+            "relationshipName": "historiaUsuario",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200324235900",
+    "entityTableName": "medicamentos",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

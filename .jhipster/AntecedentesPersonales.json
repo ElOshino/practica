@@ -1,0 +1,41 @@
+{
+    "name": "AntecedentesPersonales",
+    "fields": [
+        {
+            "fieldName": "cirugias",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "traumatismos",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "transfusionSanguinea",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "alergias",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "historiaUsuario",
+            "otherEntityRelationshipName": "antecedentesPersonales",
+            "relationshipName": "historiaUsuario",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200324235700",
+    "entityTableName": "antecedentes_personales",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

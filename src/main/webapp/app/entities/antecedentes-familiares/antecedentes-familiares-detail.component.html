@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="antecedentesFamiliares">
+            <h2><span jhiTranslate="practicaApp.antecedentesFamiliares.detail.title">Antecedentes Familiares</span> {{ antecedentesFamiliares.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="practicaApp.antecedentesFamiliares.madre">Madre</span></dt>
+                <dd>
+                    <span>{{ antecedentesFamiliares.madre }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.antecedentesFamiliares.padre">Padre</span></dt>
+                <dd>
+                    <span>{{ antecedentesFamiliares.padre }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.antecedentesFamiliares.abueloPaterno">Abuelo Paterno</span></dt>
+                <dd>
+                    <span>{{ antecedentesFamiliares.abueloPaterno }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.antecedentesFamiliares.abueloMaterno">Abuelo Materno</span></dt>
+                <dd>
+                    <span>{{ antecedentesFamiliares.abueloMaterno }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.antecedentesFamiliares.abuelaPaterna">Abuela Paterna</span></dt>
+                <dd>
+                    <span>{{ antecedentesFamiliares.abuelaPaterna }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.antecedentesFamiliares.abuelaMaterna">Abuela Materna</span></dt>
+                <dd>
+                    <span>{{ antecedentesFamiliares.abuelaMaterna }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/antecedentes-familiares', antecedentesFamiliares.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

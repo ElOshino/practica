@@ -1,0 +1,25 @@
+{
+  "practicaApp": {
+    "consulta": {
+      "home": {
+        "title": "Consultas",
+        "createLabel": "Crear nuevo Consulta",
+        "createOrEditLabel": "Crear o editar Consulta",
+        "notFound": "Ningún Consultas encontrado"
+      },
+      "created": "Un nuevo Consulta ha sido creado con el identificador {{ param }}",
+      "updated": "Un Consulta ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Consulta ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Consulta {{ id }}?"
+      },
+      "detail": {
+        "title": "Consulta"
+      },
+      "sintomas": "Sintomas",
+      "signos": "Signos",
+      "tiempoSintomas": "Tiempo Sintomas",
+      "historiaUsuario": "Historia Usuario"
+    }
+  }
+}

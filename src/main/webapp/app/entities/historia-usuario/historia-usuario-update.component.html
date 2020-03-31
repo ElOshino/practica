@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-historia-usuario-heading" jhiTranslate="practicaApp.historiaUsuario.home.createOrEditLabel">Create or edit a Historia Usuario</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.historiaUsuario.fecha" for="field_fecha">Fecha</label>
+                    <div class="input-group">
+                        <input id="field_fecha" type="text" class="form-control" name="fecha" ngbDatepicker #fechaDp="ngbDatepicker" formControlName="fecha"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.historiaUsuario.consulta" for="field_consulta">Consulta</label>
+                    <select class="form-control" id="field_consulta" name="consulta" formControlName="consulta">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="consultaOption.id === editForm.get('consulta')!.value?.id ? editForm.get('consulta')!.value : consultaOption" *ngFor="let consultaOption of consultas; trackBy: trackById">{{ consultaOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.historiaUsuario.antecedentesPersonales" for="field_antecedentesPersonales">Antecedentes Personales</label>
+                    <select class="form-control" id="field_antecedentesPersonales" name="antecedentesPersonales" formControlName="antecedentesPersonales">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="antecedentesPersonalesOption.id === editForm.get('antecedentesPersonales')!.value?.id ? editForm.get('antecedentesPersonales')!.value : antecedentesPersonalesOption" *ngFor="let antecedentesPersonalesOption of antecedentespersonales; trackBy: trackById">{{ antecedentesPersonalesOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.historiaUsuario.antecedentesFamiliares" for="field_antecedentesFamiliares">Antecedentes Familiares</label>
+                    <select class="form-control" id="field_antecedentesFamiliares" name="antecedentesFamiliares" formControlName="antecedentesFamiliares">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="antecedentesFamiliaresOption.id === editForm.get('antecedentesFamiliares')!.value?.id ? editForm.get('antecedentesFamiliares')!.value : antecedentesFamiliaresOption" *ngFor="let antecedentesFamiliaresOption of antecedentesfamiliares; trackBy: trackById">{{ antecedentesFamiliaresOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.historiaUsuario.medicamento" for="field_medicamento">Medicamento</label>
+                    <select class="form-control" id="field_medicamento" name="medicamento" formControlName="medicamento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="medicamentosOption.id === editForm.get('medicamento')!.value?.id ? editForm.get('medicamento')!.value : medicamentosOption" *ngFor="let medicamentosOption of medicamentos; trackBy: trackById">{{ medicamentosOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.historiaUsuario.examenFisico" for="field_examenFisico">Examen Fisico</label>
+                    <select class="form-control" id="field_examenFisico" name="examenFisico" formControlName="examenFisico">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="examenFisicoOption.id === editForm.get('examenFisico')!.value?.id ? editForm.get('examenFisico')!.value : examenFisicoOption" *ngFor="let examenFisicoOption of examenfisicos; trackBy: trackById">{{ examenFisicoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

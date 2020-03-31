@@ -1,0 +1,60 @@
+
+entity Paciente {
+	identificador Integer
+	activo Boolean
+	nombre String
+	genero Boolean
+	fechaNacimiento LocalDate
+}
+
+
+entity Direccion{
+  // from Element: extension
+  uso String // home | work |  old | billing - purpose of this address
+  tipo String  // postal | physical | both
+  texto String  // Text representation of the address
+  ciudad String // Name of city, town etc.
+  localidad String // District name (aka county)
+  departamento String// Sub-unit of country (abbreviations ok)
+  codigoPostal String // Postal code for area
+  pais String // Country (e.g. can be ISO 3166 2 or 3 letter code)
+}
+
+entity Periodo{
+  // from Element: extension
+ inicio LocalDate //C? Starting time with inclusive boundary
+ fin  LocalDate // C? End time with inclusive boundary, if not ongoing
+}
+entity PuntoContacto{
+    sistema String // C? phone | fax | email | pager | url | sms | other
+    valor String  // The actual contact point details
+    uso String  // home | work | temp | old | mobile - purpose of this contact point
+    prioridad Integer
+    tiempoUso Integer // Time period when the contact point was is in use
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Paciente to PuntoContacto{paciente}
+	Paciente to Direccion{paciente}
+	Direccion to Periodo{direccion}
+}
+
+
+// defining multiple oneToOne relationships
+//relationship OneToOne {
+	
+//}
+
+// Set pagination options
+
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

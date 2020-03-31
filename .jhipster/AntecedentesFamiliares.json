@@ -1,0 +1,49 @@
+{
+    "name": "AntecedentesFamiliares",
+    "fields": [
+        {
+            "fieldName": "madre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "padre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "abueloPaterno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "abueloMaterno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "abuelaPaterna",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "abuelaMaterna",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "historiaUsuario",
+            "otherEntityRelationshipName": "antecedentesFamiliares",
+            "relationshipName": "historiaUsuario",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200324235600",
+    "entityTableName": "antecedentes_familiares",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

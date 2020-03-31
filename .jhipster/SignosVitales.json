@@ -1,0 +1,41 @@
+{
+    "name": "SignosVitales",
+    "fields": [
+        {
+            "fieldName": "presionArterial",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "respiracion",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pulso",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "temperatura",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "examenFisico",
+            "otherEntityRelationshipName": "signosVitales",
+            "relationshipName": "historiaUsuario",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200325000100",
+    "entityTableName": "signos_vitales",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
