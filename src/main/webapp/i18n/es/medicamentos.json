@@ -1,0 +1,25 @@
+{
+  "practicaApp": {
+    "medicamentos": {
+      "home": {
+        "title": "Medicamentos",
+        "createLabel": "Crear nuevo Medicamentos",
+        "createOrEditLabel": "Crear o editar Medicamentos",
+        "notFound": "Ningún Medicamentos encontrado"
+      },
+      "created": "Un nuevo Medicamentos ha sido creado con el identificador {{ param }}",
+      "updated": "Un Medicamentos ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Medicamentos ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Medicamentos {{ id }}?"
+      },
+      "detail": {
+        "title": "Medicamentos"
+      },
+      "nombre": "Nombre",
+      "posologia": "Posologia",
+      "tiempoTomando": "Tiempo Tomando",
+      "historiaUsuario": "Historia Usuario"
+    }
+  }
+}

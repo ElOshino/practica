@@ -14,6 +14,18 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200324235400_added_entity_Doctor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200324235500_added_entity_Paciente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200324235600_added_entity_AntecedentesFamiliares.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200324235700_added_entity_AntecedentesPersonales.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200324235800_added_entity_Consulta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200324235900_added_entity_Medicamentos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200325000000_added_entity_ExamenFisico.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200325000100_added_entity_SignosVitales.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200325000200_added_entity_HistoriaUsuario.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200324235500_added_entity_constraints_Paciente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200325000000_added_entity_constraints_ExamenFisico.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200325000200_added_entity_constraints_HistoriaUsuario.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

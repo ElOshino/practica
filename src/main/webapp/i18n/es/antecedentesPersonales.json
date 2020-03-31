@@ -1,0 +1,26 @@
+{
+  "practicaApp": {
+    "antecedentesPersonales": {
+      "home": {
+        "title": "Antecedentes Personales",
+        "createLabel": "Crear nuevo Antecedentes Personales",
+        "createOrEditLabel": "Crear o editar Antecedentes Personales",
+        "notFound": "Ningún Antecedentes Personales encontrado"
+      },
+      "created": "Un nuevo Antecedentes Personales ha sido creado con el identificador {{ param }}",
+      "updated": "Un Antecedentes Personales ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Antecedentes Personales ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Antecedentes Personales {{ id }}?"
+      },
+      "detail": {
+        "title": "Antecedentes Personales"
+      },
+      "cirugias": "Cirugias",
+      "traumatismos": "Traumatismos",
+      "transfusionSanguinea": "Transfusion Sanguinea",
+      "alergias": "Alergias",
+      "historiaUsuario": "Historia Usuario"
+    }
+  }
+}

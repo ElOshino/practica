@@ -1,0 +1,67 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="practicaApp.antecedentesPersonales.home.title">Antecedentes Personales</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-antecedentes-personales" [routerLink]="['/antecedentes-personales/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="practicaApp.antecedentesPersonales.home.createLabel">
+            Create a new Antecedentes Personales
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="antecedentesPersonales?.length === 0">
+        <span jhiTranslate="practicaApp.antecedentesPersonales.home.notFound">No antecedentesPersonales found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="antecedentesPersonales?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.antecedentesPersonales.cirugias">Cirugias</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.antecedentesPersonales.traumatismos">Traumatismos</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.antecedentesPersonales.transfusionSanguinea">Transfusion Sanguinea</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.antecedentesPersonales.alergias">Alergias</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let antecedentesPersonales of antecedentesPersonales ;trackBy: trackId">
+                    <td><a [routerLink]="['/antecedentes-personales', antecedentesPersonales.id, 'view']">{{ antecedentesPersonales.id }}</a></td>
+                    <td>{{ antecedentesPersonales.cirugias }}</td>
+                    <td>{{ antecedentesPersonales.traumatismos }}</td>
+                    <td>{{ antecedentesPersonales.transfusionSanguinea }}</td>
+                    <td>{{ antecedentesPersonales.alergias }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/antecedentes-personales', antecedentesPersonales.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/antecedentes-personales', antecedentesPersonales.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(antecedentesPersonales)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

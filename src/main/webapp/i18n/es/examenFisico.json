@@ -1,0 +1,26 @@
+{
+  "practicaApp": {
+    "examenFisico": {
+      "home": {
+        "title": "Examen Fisicos",
+        "createLabel": "Crear nuevo Examen Fisico",
+        "createOrEditLabel": "Crear o editar Examen Fisico",
+        "notFound": "Ningún Examen Fisicos encontrado"
+      },
+      "created": "Un nuevo Examen Fisico ha sido creado con el identificador {{ param }}",
+      "updated": "Un Examen Fisico ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Examen Fisico ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Examen Fisico {{ id }}?"
+      },
+      "detail": {
+        "title": "Examen Fisico"
+      },
+      "peso": "Peso",
+      "talla": "Talla",
+      "indiceMasaCorporal": "Indice Masa Corporal",
+      "signosVitales": "Signos Vitales",
+      "historiaUsuario": "Historia Usuario"
+    }
+  }
+}

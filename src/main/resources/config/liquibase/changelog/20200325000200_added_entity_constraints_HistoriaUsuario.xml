@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity HistoriaUsuario.
+    -->
+    <changeSet id="20200325000200-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="consulta_id"
+                                 baseTableName="historia_usuario"
+                                 constraintName="fk_historia_usuario_consulta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="consulta"/>
+
+        <addForeignKeyConstraint baseColumnNames="antecedentes_personales_id"
+                                 baseTableName="historia_usuario"
+                                 constraintName="fk_historia_usuario_antecedentes_personales_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antecedentes_personales"/>
+
+        <addForeignKeyConstraint baseColumnNames="antecedentes_familiares_id"
+                                 baseTableName="historia_usuario"
+                                 constraintName="fk_historia_usuario_antecedentes_familiares_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antecedentes_familiares"/>
+
+        <addForeignKeyConstraint baseColumnNames="medicamento_id"
+                                 baseTableName="historia_usuario"
+                                 constraintName="fk_historia_usuario_medicamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="medicamentos"/>
+
+        <addForeignKeyConstraint baseColumnNames="examen_fisico_id"
+                                 baseTableName="historia_usuario"
+                                 constraintName="fk_historia_usuario_examen_fisico_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="examen_fisico"/>
+
+    </changeSet>
+</databaseChangeLog>

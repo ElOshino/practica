@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="examenFisico">
+            <h2><span jhiTranslate="practicaApp.examenFisico.detail.title">Examen Fisico</span> {{ examenFisico.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="practicaApp.examenFisico.peso">Peso</span></dt>
+                <dd>
+                    <span>{{ examenFisico.peso }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.examenFisico.talla">Talla</span></dt>
+                <dd>
+                    <span>{{ examenFisico.talla }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.examenFisico.indiceMasaCorporal">Indice Masa Corporal</span></dt>
+                <dd>
+                    <span>{{ examenFisico.indiceMasaCorporal }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.examenFisico.signosVitales">Signos Vitales</span></dt>
+                <dd>
+                    <div *ngIf="examenFisico.signosVitales">
+                        <a [routerLink]="['/signos-vitales', examenFisico.signosVitales?.id, 'view']">{{ examenFisico.signosVitales?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/examen-fisico', examenFisico.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

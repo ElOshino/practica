@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="signosVitales">
+            <h2><span jhiTranslate="practicaApp.signosVitales.detail.title">Signos Vitales</span> {{ signosVitales.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="practicaApp.signosVitales.presionArterial">Presion Arterial</span></dt>
+                <dd>
+                    <span>{{ signosVitales.presionArterial }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.signosVitales.respiracion">Respiracion</span></dt>
+                <dd>
+                    <span>{{ signosVitales.respiracion }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.signosVitales.pulso">Pulso</span></dt>
+                <dd>
+                    <span>{{ signosVitales.pulso }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.signosVitales.temperatura">Temperatura</span></dt>
+                <dd>
+                    <span>{{ signosVitales.temperatura }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/signos-vitales', signosVitales.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

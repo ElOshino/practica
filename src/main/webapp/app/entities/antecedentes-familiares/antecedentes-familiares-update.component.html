@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-antecedentes-familiares-heading" jhiTranslate="practicaApp.antecedentesFamiliares.home.createOrEditLabel">Create or edit a Antecedentes Familiares</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.antecedentesFamiliares.madre" for="field_madre">Madre</label>
+                    <input type="text" class="form-control" name="madre" id="field_madre"
+                           formControlName="madre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.antecedentesFamiliares.padre" for="field_padre">Padre</label>
+                    <input type="text" class="form-control" name="padre" id="field_padre"
+                           formControlName="padre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.antecedentesFamiliares.abueloPaterno" for="field_abueloPaterno">Abuelo Paterno</label>
+                    <input type="text" class="form-control" name="abueloPaterno" id="field_abueloPaterno"
+                           formControlName="abueloPaterno"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.antecedentesFamiliares.abueloMaterno" for="field_abueloMaterno">Abuelo Materno</label>
+                    <input type="text" class="form-control" name="abueloMaterno" id="field_abueloMaterno"
+                           formControlName="abueloMaterno"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.antecedentesFamiliares.abuelaPaterna" for="field_abuelaPaterna">Abuela Paterna</label>
+                    <input type="text" class="form-control" name="abuelaPaterna" id="field_abuelaPaterna"
+                           formControlName="abuelaPaterna"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="practicaApp.antecedentesFamiliares.abuelaMaterna" for="field_abuelaMaterna">Abuela Materna</label>
+                    <input type="text" class="form-control" name="abuelaMaterna" id="field_abuelaMaterna"
+                           formControlName="abuelaMaterna"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

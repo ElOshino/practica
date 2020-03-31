@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="antecedentesPersonales">
+            <h2><span jhiTranslate="practicaApp.antecedentesPersonales.detail.title">Antecedentes Personales</span> {{ antecedentesPersonales.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="practicaApp.antecedentesPersonales.cirugias">Cirugias</span></dt>
+                <dd>
+                    <span>{{ antecedentesPersonales.cirugias }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.antecedentesPersonales.traumatismos">Traumatismos</span></dt>
+                <dd>
+                    <span>{{ antecedentesPersonales.traumatismos }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.antecedentesPersonales.transfusionSanguinea">Transfusion Sanguinea</span></dt>
+                <dd>
+                    <span>{{ antecedentesPersonales.transfusionSanguinea }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.antecedentesPersonales.alergias">Alergias</span></dt>
+                <dd>
+                    <span>{{ antecedentesPersonales.alergias }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/antecedentes-personales', antecedentesPersonales.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

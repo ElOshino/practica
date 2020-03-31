@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="paciente">
+            <h2><span jhiTranslate="practicaApp.paciente.detail.title">Paciente</span> {{ paciente.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="practicaApp.paciente.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ paciente.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.paciente.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{ paciente.telefono }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.paciente.cedula">Cedula</span></dt>
+                <dd>
+                    <span>{{ paciente.cedula }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.paciente.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{ paciente.direccion }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.paciente.sexo">Sexo</span></dt>
+                <dd>
+                    <span>{{ paciente.sexo }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.paciente.tipoSangre">Tipo Sangre</span></dt>
+                <dd>
+                    <span>{{ paciente.tipoSangre }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.paciente.fechaNacimiento">Fecha Nacimiento</span></dt>
+                <dd>
+                    <span>{{ paciente.fechaNacimiento }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.paciente.historiaUsuario">Historia Usuario</span></dt>
+                <dd>
+                    <div *ngIf="paciente.historiaUsuario">
+                        <a [routerLink]="['/historia-usuario', paciente.historiaUsuario?.id, 'view']">{{ paciente.historiaUsuario?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.paciente.doctor">Doctor</span></dt>
+                <dd>
+                    <div *ngIf="paciente.doctor">
+                        <a [routerLink]="['/doctor', paciente.doctor?.id, 'view']">{{ paciente.doctor?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/paciente', paciente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

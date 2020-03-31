@@ -1,0 +1,45 @@
+{
+    "name": "ExamenFisico",
+    "fields": [
+        {
+            "fieldName": "peso",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "talla",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "indiceMasaCorporal",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "signosVitales",
+            "otherEntityRelationshipName": "historiaUsuario",
+            "relationshipName": "signosVitales",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "historiaUsuario",
+            "otherEntityRelationshipName": "examenFisico",
+            "relationshipName": "historiaUsuario",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200325000000",
+    "entityTableName": "examen_fisico",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

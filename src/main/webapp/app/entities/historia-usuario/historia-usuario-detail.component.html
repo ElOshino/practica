@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="historiaUsuario">
+            <h2><span jhiTranslate="practicaApp.historiaUsuario.detail.title">Historia Usuario</span> {{ historiaUsuario.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="practicaApp.historiaUsuario.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{ historiaUsuario.fecha }}</span>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.historiaUsuario.consulta">Consulta</span></dt>
+                <dd>
+                    <div *ngIf="historiaUsuario.consulta">
+                        <a [routerLink]="['/consulta', historiaUsuario.consulta?.id, 'view']">{{ historiaUsuario.consulta?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.historiaUsuario.antecedentesPersonales">Antecedentes Personales</span></dt>
+                <dd>
+                    <div *ngIf="historiaUsuario.antecedentesPersonales">
+                        <a [routerLink]="['/antecedentes-personales', historiaUsuario.antecedentesPersonales?.id, 'view']">{{ historiaUsuario.antecedentesPersonales?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.historiaUsuario.antecedentesFamiliares">Antecedentes Familiares</span></dt>
+                <dd>
+                    <div *ngIf="historiaUsuario.antecedentesFamiliares">
+                        <a [routerLink]="['/antecedentes-familiares', historiaUsuario.antecedentesFamiliares?.id, 'view']">{{ historiaUsuario.antecedentesFamiliares?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.historiaUsuario.medicamento">Medicamento</span></dt>
+                <dd>
+                    <div *ngIf="historiaUsuario.medicamento">
+                        <a [routerLink]="['/medicamentos', historiaUsuario.medicamento?.id, 'view']">{{ historiaUsuario.medicamento?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="practicaApp.historiaUsuario.examenFisico">Examen Fisico</span></dt>
+                <dd>
+                    <div *ngIf="historiaUsuario.examenFisico">
+                        <a [routerLink]="['/examen-fisico', historiaUsuario.examenFisico?.id, 'view']">{{ historiaUsuario.examenFisico?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/historia-usuario', historiaUsuario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

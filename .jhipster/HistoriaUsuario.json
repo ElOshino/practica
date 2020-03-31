@@ -1,0 +1,69 @@
+{
+    "name": "HistoriaUsuario",
+    "fields": [
+        {
+            "fieldName": "fecha",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "consulta",
+            "otherEntityRelationshipName": "historiaUsuario",
+            "relationshipName": "consulta",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "antecedentesPersonales",
+            "otherEntityRelationshipName": "historiaUsuario",
+            "relationshipName": "antecedentesPersonales",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "antecedentesFamiliares",
+            "otherEntityRelationshipName": "historiaUsuario",
+            "relationshipName": "antecedentesFamiliares",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "medicamentos",
+            "otherEntityRelationshipName": "historiaUsuario",
+            "relationshipName": "medicamento",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "examenFisico",
+            "otherEntityRelationshipName": "historiaUsuario",
+            "relationshipName": "examenFisico",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "paciente",
+            "otherEntityRelationshipName": "historiaUsuario",
+            "relationshipName": "paciente",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200325000200",
+    "entityTableName": "historia_usuario",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

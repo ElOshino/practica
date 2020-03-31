@@ -1,0 +1,37 @@
+{
+    "name": "Consulta",
+    "fields": [
+        {
+            "fieldName": "sintomas",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signos",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tiempoSintomas",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "historiaUsuario",
+            "otherEntityRelationshipName": "consulta",
+            "relationshipName": "historiaUsuario",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200324235800",
+    "entityTableName": "consulta",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

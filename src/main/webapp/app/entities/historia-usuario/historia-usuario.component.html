@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="practicaApp.historiaUsuario.home.title">Historia Usuarios</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-historia-usuario" [routerLink]="['/historia-usuario/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="practicaApp.historiaUsuario.home.createLabel">
+            Create a new Historia Usuario
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="historiaUsuarios?.length === 0">
+        <span jhiTranslate="practicaApp.historiaUsuario.home.notFound">No historiaUsuarios found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="historiaUsuarios?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.historiaUsuario.fecha">Fecha</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.historiaUsuario.consulta">Consulta</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.historiaUsuario.antecedentesPersonales">Antecedentes Personales</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.historiaUsuario.antecedentesFamiliares">Antecedentes Familiares</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.historiaUsuario.medicamento">Medicamento</span></th>
+                    <th scope="col" ><span jhiTranslate="practicaApp.historiaUsuario.examenFisico">Examen Fisico</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let historiaUsuario of historiaUsuarios ;trackBy: trackId">
+                    <td><a [routerLink]="['/historia-usuario', historiaUsuario.id, 'view']">{{ historiaUsuario.id }}</a></td>
+                    <td>{{ historiaUsuario.fecha | date:'mediumDate' }}</td>
+                    <td>
+                        <div *ngIf="historiaUsuario.consulta">
+                            <a [routerLink]="['/consulta', historiaUsuario.consulta?.id, 'view']" >{{ historiaUsuario.consulta?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="historiaUsuario.antecedentesPersonales">
+                            <a [routerLink]="['/antecedentes-personales', historiaUsuario.antecedentesPersonales?.id, 'view']" >{{ historiaUsuario.antecedentesPersonales?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="historiaUsuario.antecedentesFamiliares">
+                            <a [routerLink]="['/antecedentes-familiares', historiaUsuario.antecedentesFamiliares?.id, 'view']" >{{ historiaUsuario.antecedentesFamiliares?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="historiaUsuario.medicamento">
+                            <a [routerLink]="['/medicamentos', historiaUsuario.medicamento?.id, 'view']" >{{ historiaUsuario.medicamento?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="historiaUsuario.examenFisico">
+                            <a [routerLink]="['/examen-fisico', historiaUsuario.examenFisico?.id, 'view']" >{{ historiaUsuario.examenFisico?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/historia-usuario', historiaUsuario.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/historia-usuario', historiaUsuario.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(historiaUsuario)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

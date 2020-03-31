@@ -1,0 +1,30 @@
+{
+  "practicaApp": {
+    "paciente": {
+      "home": {
+        "title": "Pacientes",
+        "createLabel": "Crear nuevo Paciente",
+        "createOrEditLabel": "Crear o editar Paciente",
+        "notFound": "Ningún Pacientes encontrado"
+      },
+      "created": "Un nuevo Paciente ha sido creado con el identificador {{ param }}",
+      "updated": "Un Paciente ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Paciente ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Paciente {{ id }}?"
+      },
+      "detail": {
+        "title": "Paciente"
+      },
+      "nombre": "Nombre",
+      "telefono": "Telefono",
+      "cedula": "Cedula",
+      "direccion": "Direccion",
+      "sexo": "Sexo",
+      "tipoSangre": "Tipo Sangre",
+      "fechaNacimiento": "Fecha Nacimiento",
+      "historiaUsuario": "Historia Usuario",
+      "doctor": "Doctor"
+    }
+  }
+}
